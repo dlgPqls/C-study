@@ -51,7 +51,7 @@ int main()
 					cout << "*";   //아래로 갈수록 별 개수 감소
 				cout << endl;
 			}
-		}break;
+		}break;   //case를 맞추면 다시 
 
 		case 2:
 		{
@@ -150,12 +150,12 @@ int main()
 
 		case 4:
 		{
-			return 0;
+			return 0;   //0을 반환하여 끝냄
 		}break;
 
 		default:
 		{
-			break;
+			break;   //나머지 숫자는 다시 입력하도록 함.
 		}
 		}
 	} while (inputnum != 4);
