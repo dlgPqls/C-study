@@ -4,42 +4,42 @@ using namespace std;
 
 int main()
 {
-	int a[10],oddnum[10],evennum[10];
+	int a[10],oddnum[10],evennum[10]; 
 	int i, k=0, j=0;
 	
 
 	for (i = 0; i < 4; i++) {
-		cout << "¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ";
+		cout << "ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ";
 		cin >> a[i];
 			
 	}
-	cout << endl << "-------°á°ú--------" << endl << endl;
+	cout << endl << "-------ê²°ê³¼--------" << endl << endl;
 
 	
 	for (i = 0; i < 4; i++) {
 		if (a[i] % 2 == 0) {
 			evennum[k] = a[i];
 			k += 1;		
-		}
+		}   //ì§ìˆ˜ ì €ì¥
 		else {
 			oddnum[j] = a[i];
 			j += 1;
 		
-		}
+		}   //í™€ìˆ˜ ì €ì¥
 	
 	}
 	
 	
-	cout << "È¦¼ö:";
+	cout << "í™€ìˆ˜:";
 	for (i = 0; i < k; i++) {
 		cout << "  " << oddnum[i]<<"  ";
 	}
-	cout << endl << "È¦¼ö´Â ÃÑ " << i << "°³ ÀÔ´Ï´Ù." << endl;
+	cout << endl << "í™€ìˆ˜ëŠ” ì´ " << i << "ê°œ ì…ë‹ˆë‹¤." << endl;
 
-	cout << "Â¦¼ö:";
+	cout << "ì§ìˆ˜:";
 	for (i = 0; i < j; i++) {
 		cout <<"  " << evennum[i] <<"  ";
 	}
-	cout << endl << "Â¦¼ö´Â ÃÑ " << j << "°³ ÀÔ´Ï´Ù." << endl;
+	cout << endl << "ì§ìˆ˜ëŠ” ì´ " << j << "ê°œ ì…ë‹ˆë‹¤." << endl;
 
 }
