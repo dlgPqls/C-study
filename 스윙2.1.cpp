@@ -8,7 +8,7 @@ int main()
 	int i, k=0, j=0;
 	
 
-	for (i = 0; i < 4; i++) {
+	for (i = 0; i < 5; i++) {
 		cout << "숫자를 입력하세요 : ";
 		cin >> a[i];
 			
@@ -16,7 +16,7 @@ int main()
 	cout << endl << "-------결과--------" << endl << endl;
 
 	
-	for (i = 0; i < 4; i++) {
+	for (i = 0; i < 5; i++) {
 		if (a[i] % 2 == 0) {
 			evennum[k] = a[i];
 			k += 1;		
