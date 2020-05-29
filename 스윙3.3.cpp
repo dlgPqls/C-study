@@ -16,11 +16,11 @@ int main(void)
 		cin >> *(arr+i);
 	}
 
-	cout << "정렬 전" << endl <<endl;
+	cout << "정렬 전" << endl ;
 	print(arr);
 	sort(arr);
 
-	cout << "정렬 후" << endl;
+	cout << endl << "정렬 후" << endl;
 	print(arr);
 	
 
