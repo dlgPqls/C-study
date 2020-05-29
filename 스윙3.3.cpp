@@ -6,8 +6,7 @@ void print(int* ptr);
 
 int main(void)
 {
-	int arr[5] ;
-	int* ptr = arr;
+	int arr[5] = 0;
 	int i ;
 
 	cout << "숫자 5개를 입력해주세요 (띄어쓰기로 구분)";
