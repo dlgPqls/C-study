@@ -14,10 +14,10 @@ int main(void) {
 	int* ptr1 = &num1;
 	int* ptr2 = &num2;
 
-	cout << "swqp Àü  :" << *ptr1 <<"  " << *ptr2 << endl;
+	cout << "swqp ì „  :" << *ptr1 <<"  " << *ptr2 << endl;
 
 	swap(ptr1, ptr2);
-	cout << "swqp ÈÄ  :" << *ptr1 <<"  "<< *ptr2 << endl;
+	cout << "swqp í›„  :" << *ptr1 <<"  "<< *ptr2 << endl;
 }
 
 void swap(int* x, int* y) {
