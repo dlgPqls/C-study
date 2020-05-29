@@ -16,7 +16,7 @@ int main(void)
 		cin >> *(arr+i);
 	}
 
-	cout << "정렬 전" << endl <<endl <<endl;
+	cout << "정렬 전" << endl <<endl;
 	print(arr);
 	sort(arr);
 
