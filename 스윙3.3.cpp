@@ -10,17 +10,17 @@ int main(void)
 	int* ptr = arr;
 	int i ;
 
-	cout << "¼ıÀÚ 5°³¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä (¶ç¾î¾²±â·Î ±¸ºĞ)";
+	cout << "ìˆ«ì 5ê°œë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” (ë„ì–´ì“°ê¸°ë¡œ êµ¬ë¶„)";
 
 	for (i = 0; i < 5; i++) {
 		cin >> *(arr+i);
 	}
 
-	cout << "Á¤·Ä Àü" << endl;
+	cout << "ì •ë ¬ ì „" << endl <<endl <<endl;
 	print(arr);
 	sort(arr);
 
-	cout << "Á¤·Ä ÈÄ" << endl;
+	cout << "ì •ë ¬ í›„" << endl;
 	print(arr);
 	
 
