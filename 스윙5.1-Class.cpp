@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include <class.h>
+#include "class.h"
 
 void phoneBook::addPhone() {
 	cout << "이름을 입력해주세요 >> ";
