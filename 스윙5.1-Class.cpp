@@ -4,24 +4,24 @@ using namespace std;
 #include <class.h>
 
 void phoneBook::addPhone() {
-	cout << "ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä >> ";
+	cout << "ì´ë¦„ì„ ìž…ë ¥í•´ì£¼ì„¸ìš” >> ";
 	cin >> name;
-	cout << "ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä >> ";
+	cout << "ì „í™”ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš” >> ";
 	cin >> phoneNum;
 }
 
 void phoneBook::editPhone() {
 	string inputname;
 
-	cout << "ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä >> ";
+	cout << "ì´ë¦„ì„ ìž…ë ¥í•´ì£¼ì„¸ìš” >> ";
 	cin >> inputname;
 
 	while (inputname != name) {
-		cout << "¿¬¶ôÃ³°¡ Á¸ÀçÇÏÁö ¾Ê½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä";
+		cout << "ì—°ë½ì²˜ê°€ ì¡´ìž¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤. ë‹¤ì‹œ ìž…ë ¥í•´ì£¼ì„¸ìš”";
 		cin >> inputname;
 	}
 	name = inputname;
-	cout << "º¯°æÇÒ ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä >> ";
+	cout << "ë³€ê²½í•  ì „í™”ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ ì£¼ì„¸ìš” >> ";
 	cin >> phoneNum;
 }
 
