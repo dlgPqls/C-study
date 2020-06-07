@@ -4,13 +4,13 @@ using namespace std;
 int main() {
 	phoneBook A;
 	int answer = 0;
-	cout << "--- swing ÀüÈ­¹øÈ£ºÎ ---" << endl;
+	cout << "--- swing ì „í™”ë²ˆí˜¸ë¶€ ---" << endl;
 	A.addPhone();
 
 	while (answer != 3) {
-		cout << "1. ÃÖ½Å µî·Ï ÀüÈ­¹øÈ£ Á¶È¸" << endl;
-		cout << "2. ÃÖ½Å µî·Ï ÀüÈ­¹øÈ£ ¼öÁ¤" << endl;
-		cout << "3. Á¾·á " << endl << " >> ";
+		cout << "1. ìµœì‹  ë“±ë¡ ì „í™”ë²ˆí˜¸ ì¡°íšŒ" << endl;
+		cout << "2. ìµœì‹  ë“±ë¡ ì „í™”ë²ˆí˜¸ ìˆ˜ì •" << endl;
+		cout << "3. ì¢…ë£Œ " << endl << " >> ";
 		cin >> answer;
 
 		switch (answer)
