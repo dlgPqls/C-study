@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-#include "class.h"
+#include "Class.h"
 
 int main() {
 	phoneBook A;
