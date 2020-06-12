@@ -4,11 +4,11 @@ using namespace std;
 class VendingMachine
 {
 private:
-	string name;  //À½·áÀÌ¸§
-	int price;  //°¡°İ
-	int total;  //À½·á ÇÕ»ê °ª
+	string name;  //ìŒë£Œì´ë¦„
+	int price;  //ê°€ê²©
+	int total = 0;  //ìŒë£Œ í•©ì‚° ê°’
 public:
-	VendingMachine();  //»ı¼ºÀÚ
+	VendingMachine();  //ìƒì„±ì
 	void purchase(double v1);
 	void menu();
 	string getName();
@@ -22,129 +22,129 @@ public:
 
 void VendingMachine::purchase(double v1) {
 	int won ;
-	cout << "ÃÑ ±İ¾× : " << v1 << endl;
-	cout << "ÁöÆó¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ";
+	cout << "ì´ ê¸ˆì•¡ : " << v1 << endl;
+	cout << "ì§€íë¥¼ ì…ë ¥í•˜ì„¸ìš” : ";
 	cin >> won;
 
-	while (1) {   //±İ¾×ÀÌ ºÎÁ·ÇÏ¸é ´Ù½Ã ³Ö°í ¹İº¹ÇØ¾ßÇÑ´Ù.
+	while (1) {   //ê¸ˆì•¡ì´ ë¶€ì¡±í•˜ë©´ ë‹¤ì‹œ ë„£ê³  ë°˜ë³µí•´ì•¼í•œë‹¤.
 		if (won == v1) {
-			cout << "°Å½º¸§µ·ÀÌ ¾ø½À´Ï´Ù. ¾È³çÈ÷°¡¼¼¿ä.";
+			cout << "ê±°ìŠ¤ë¦„ëˆì´ ì—†ìŠµë‹ˆë‹¤. ì•ˆë…•íˆê°€ì„¸ìš”.";
 			break;
 		}
 		else if (won < v1)
 		{
-			cout << "±İ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù. ´Ù½Ã ³Ö¾îÁÖ¼¼¿ä : ";
+			cout << "ê¸ˆì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤. ë‹¤ì‹œ ë„£ì–´ì£¼ì„¸ìš” : ";
 			cin >> won;
 			continue;
 		}
 		else if (won > v1)
 		{
-			int change = won - v1;   //°Å½º¸§µ· °è»ê
-			int numF = change / 500;   //500¿øÀÌ ¸î °³ ³ª¿À´ÂÁö °è»ê
-			int numO = (change-500*numF) / 100;   //100¿øÀÌ ¸î °³ ³ª¿À´ÂÁö °è»ê
-			if (change % 100 == 0)   //³ª¸ÓÁö ¿¬»êÀ¸·Î 10¿ø ´ÜÀ§³ª 1¿ø ´ÜÀ§°¡ ÀÖ´Â È®ÀÎ
+			int change = won - v1;   //ê±°ìŠ¤ë¦„ëˆ ê³„ì‚°
+			int numF = change / 500;   //500ì›ì´ ëª‡ ê°œ ë‚˜ì˜¤ëŠ”ì§€ ê³„ì‚°
+			int numO = (change-500*numF) / 100;   //100ì›ì´ ëª‡ ê°œ ë‚˜ì˜¤ëŠ”ì§€ ê³„ì‚°
+			if (change % 100 == 0)   //ë‚˜ë¨¸ì§€ ì—°ì‚°ìœ¼ë¡œ 10ì› ë‹¨ìœ„ë‚˜ 1ì› ë‹¨ìœ„ê°€ ìˆëŠ” í™•ì¸
 			{
-				cout << "°Å½º¸§µ· ÀÔ´Ï´Ù." << endl;
+				cout << "ê±°ìŠ¤ë¦„ëˆ ì…ë‹ˆë‹¤." << endl;
 			}
 			else {
-				cout << "°Å½º¸§µ·Àº 500¿ø°ú 100¿ø¸¸ °¡´ÉÇÕ´Ï´Ù." << endl;
+				cout << "ê±°ìŠ¤ë¦„ëˆì€ 500ì›ê³¼ 100ì›ë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤." << endl;
 			}
-			cout << "500¿ø : " << numF << "°³" << endl;
-			cout << "100¿ø : " << numO << "°³" << endl;
-			cout << "¾È³çÈ÷°¡¼¼¿ä.";
+			cout << "500ì› : " << numF << "ê°œ" << endl;
+			cout << "100ì› : " << numO << "ê°œ" << endl;
+			cout << "ì•ˆë…•íˆê°€ì„¸ìš”.";
 			break;
 		}
 	}
 }
 
 VendingMachine::VendingMachine() {
-	cout << "===SWING ÀÚÆÇ±â=== " << endl;
-	cout << "1. ÄÚÄ«Äİ¶ó : 1500¿ø" << endl;
-	cout << "2. ºñÅ¸500 : 900¿ø" << endl;
-	cout << "3. ÆÄ¿ö¿¡ÀÌµå : 2000¿ø" << endl;
-	cout << "4. ÁØºñÁß" << endl;
-	cout << "5.°è»ê" << endl << endl;
+	cout << "===SWING ìíŒê¸°=== " << endl;
+	cout << "1. ì½”ì¹´ì½œë¼ : 1500ì›" << endl;
+	cout << "2. ë¹„íƒ€500 : 900ì›" << endl;
+	cout << "3. íŒŒì›Œì—ì´ë“œ : 2000ì›" << endl;
+	cout << "4. ì¤€ë¹„ì¤‘" << endl;
+	cout << "5.ê³„ì‚°" << endl << endl;
 }
 
 void VendingMachine::menu() {
 	cout << endl << endl;
-	cout << "===SWING ÀÚÆÇ±â=== " << endl;
-	cout << "1. ÄÚÄ«Äİ¶ó : 1500¿ø" << endl;
-	cout << "2. ºñÅ¸500 : 900¿ø" << endl;
-	cout << "3. ÆÄ¿ö¿¡ÀÌµå : 2000¿ø" << endl;
-	cout << "4. " << name << " : " << price <<"¿ø"<< endl;
-	cout << "5.°è»ê" << endl << endl;
+	cout << "===SWING ìíŒê¸°=== " << endl;
+	cout << "1. ì½”ì¹´ì½œë¼ : 1500ì›" << endl;
+	cout << "2. ë¹„íƒ€500 : 900ì›" << endl;
+	cout << "3. íŒŒì›Œì—ì´ë“œ : 2000ì›" << endl;
+	cout << "4. " << name << " : " << price <<"ì›"<< endl;
+	cout << "5.ê³„ì‚°" << endl << endl;
 }
 
-void VendingMachine::setName(string n) {   //¸â¹ö º¯¼ö¿¡ ÀúÀåÇÑ´Ù.
+void VendingMachine::setName(string n) {   //ë©¤ë²„ ë³€ìˆ˜ì— ì €ì¥í•œë‹¤.
 	name = n;
 }
  
-string VendingMachine::getName() {   //»õ·Î¿î ÀÌ¸§À» ¹Ş´Â´Ù.
-	cout << "Ãß°¡ÇÒ À½·á ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ";
+string VendingMachine::getName() {   //ìƒˆë¡œìš´ ì´ë¦„ì„ ë°›ëŠ”ë‹¤.
+	cout << "ì¶”ê°€í•  ìŒë£Œ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ";
 	cin >> name;
 	return name;
 }
 
-void VendingMachine::setPrice(int P) {   //¸â¹öº¯¼ö¿¡ ÀúÀåÇÑ´Ù.
+void VendingMachine::setPrice(int P) {   //ë©¤ë²„ë³€ìˆ˜ì— ì €ì¥í•œë‹¤.
 	price = P;
 }
 
-double VendingMachine::getPrice() {   //»õ·Î¿î °¡°İÀ» ¹Ş´Â´Ù.
-	cout << "ÆÇ¸ÅÇÒ °¡°İÀ» ÀÔ·ÂÇÏ¼¼¿ä : ";
+double VendingMachine::getPrice() {   //ìƒˆë¡œìš´ ê°€ê²©ì„ ë°›ëŠ”ë‹¤.
+	cout << "íŒë§¤í•  ê°€ê²©ì„ ì…ë ¥í•˜ì„¸ìš” : ";
 	cin >> price;
 	return price;
 }
 
-double VendingMachine::getTotal() {   //´Ù °è»êµÈ total°ªÀ» ¹İÈ¯ÇÑ´Ù.
+double VendingMachine::getTotal() {   //ë‹¤ ê³„ì‚°ëœ totalê°’ì„ ë°˜í™˜í•œë‹¤.
 	return total;
 }
 
-void VendingMachine::setTotal(int t) {   //°¡°İÀ» ¸â¹öº¯¼ö total¿¡ ´©Àû½ÃÅ²´Ù.
+void VendingMachine::setTotal(int t) {   //ê°€ê²©ì„ ë©¤ë²„ë³€ìˆ˜ totalì— ëˆ„ì ì‹œí‚¨ë‹¤.
 	total += t;
 }
 
-double VendingMachine::newPrice() {   //»õ·Î ÀÔ·ÂµÈ °¡°İÀ» °è»ê¿¡ ÀÌ¿ëÇÒ ¼ö ÀÖµµ·Ï ÇØÁÖ´Â ÇÔ¼ö
+double VendingMachine::newPrice() {   //ìƒˆë¡œ ì…ë ¥ëœ ê°€ê²©ì„ ê³„ì‚°ì— ì´ìš©í•  ìˆ˜ ìˆë„ë¡ í•´ì£¼ëŠ” í•¨ìˆ˜
 	return price;
 }
 
 int main(void) {
 	VendingMachine vm;
-	VendingMachine* ptr = &vm;  //°´Ã¼ Æ÷ÀÎÅÍ ¼±¾ğ
+	VendingMachine* ptr = &vm;  //ê°ì²´ í¬ì¸í„° ì„ ì–¸
 	int count, inputnum;
 
-	ptr->setName(vm.getName());  //»õ·Î¿î À½·á¼ö ÀÌ¸§À» ¹Ş¾Æ ³Ñ±äÈÄ, name¿¡ ÀúÀåÇÑ´Ù.
-	ptr->setPrice(vm.getPrice());   //»õ·Î¿î À½·á¼ö ÀÌ¸§À» ¹Ş¾Æ ³Ñ±äÈÄ, price¿¡ ÀúÀåÇÑ´Ù.
-	vm.menu();   //º¯°æµÈ ¸Ş´º¸¦ Ãâ·ÂÇÑ´Ù.
+	ptr->setName(vm.getName());  //ìƒˆë¡œìš´ ìŒë£Œìˆ˜ ì´ë¦„ì„ ë°›ì•„ ë„˜ê¸´í›„, nameì— ì €ì¥í•œë‹¤.
+	ptr->setPrice(vm.getPrice());   //ìƒˆë¡œìš´ ìŒë£Œìˆ˜ ì´ë¦„ì„ ë°›ì•„ ë„˜ê¸´í›„, priceì— ì €ì¥í•œë‹¤.
+	vm.menu();   //ë³€ê²½ëœ ë©”ë‰´ë¥¼ ì¶œë ¥í•œë‹¤.
 
-	do   //ÇÑ¹øÀº ¹İº¹ÇØ¾ßÇÑ´Ù. 5¹øÀÌ °è»ê.
+	do   //í•œë²ˆì€ ë°˜ë³µí•´ì•¼í•œë‹¤. 5ë²ˆì´ ê³„ì‚°.
 	{
-		cout << "¹øÈ£¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä : ";
-		cin >> inputnum;   //¼±ÅÃÇÒ À½·á¼ö ¹øÈ£¸¦ ¹Ş´Â´Ù.
+		cout << "ë²ˆí˜¸ë¥¼ ì„ íƒí•´ì£¼ì„¸ìš” : ";
+		cin >> inputnum;   //ì„ íƒí•  ìŒë£Œìˆ˜ ë²ˆí˜¸ë¥¼ ë°›ëŠ”ë‹¤.
 		switch (inputnum)
 		{
 		case 1:
-			cout << "±¸¸ÅÇÒ ¼ö·®À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ";
+			cout << "êµ¬ë§¤í•  ìˆ˜ëŸ‰ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ";
 			cin >> count;
-			ptr -> setTotal(1500 * count);   //°è»êÇÑ °ªÀ» setTotal()¿¡ ´©Àû½ÃÅ²´Ù.
+			ptr -> setTotal(1500 * count);   //ê³„ì‚°í•œ ê°’ì„ setTotal()ì— ëˆ„ì ì‹œí‚¨ë‹¤.
 			break;
 		case 2:
-			cout << "±¸¸ÅÇÒ ¼ö·®À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ";
+			cout << "êµ¬ë§¤í•  ìˆ˜ëŸ‰ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ";
 			cin >> count;
 			ptr->setTotal(900 * count);
 			break;
 		case 3:
-			cout << "±¸¸ÅÇÒ ¼ö·®À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ";
+			cout << "êµ¬ë§¤í•  ìˆ˜ëŸ‰ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ";
 			cin >> count;
 			ptr->setTotal(2000 * count);
 			break;
 		case 4:
-			cout << "±¸¸ÅÇÒ ¼ö·®À» ÀÔ·ÂÇØÁÖ¼¼¿ä : ";
+			cout << "êµ¬ë§¤í•  ìˆ˜ëŸ‰ì„ ì…ë ¥í•´ì£¼ì„¸ìš” : ";
 			cin >> count;
 			ptr ->setTotal(vm.newPrice() * count);
 			break;
 		}
 	} while (inputnum != 5);
-	cout << "°è»ê ÁßÀÔ´Ï´Ù. ±â´Ù·ÁÁÖ¼¼¿ä . . . ." << endl << endl;
+	cout << "ê³„ì‚° ì¤‘ì…ë‹ˆë‹¤. ê¸°ë‹¤ë ¤ì£¼ì„¸ìš” . . . ." << endl << endl;
 	vm.purchase(ptr->getTotal());
 }
