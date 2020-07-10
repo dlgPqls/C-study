@@ -105,7 +105,7 @@ void ATM::checking()
 };
 
 int main(void) {
-	int n = 0, count = 0, k = -1;
+	int n = 0, count, k , rnum;
 	int inputnum = 0, sendMon = 0;
 	string customer, receiver, epw;
 
@@ -156,6 +156,7 @@ int main(void) {
 					for (int i = 0; i < n; i++) {
 						if (receiver == atm[i].getName()) {
 							k++;
+							rnum = i;
 							break;
 						}
 					}
@@ -166,7 +167,7 @@ int main(void) {
 						cout << "얼마를 보내시겠습니까? >> ";
 						cin >> sendMon;
 						int receiveMon = sendMon;
-						atm[k].send(receiver, receiveMon);
+						atm[rnum ].send(receiver, receiveMon);
 						atm[count].receive(sendMon);
 					}
 					break;
