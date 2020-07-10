@@ -4,18 +4,18 @@ using namespace std;
 
 class ATM {
 private:
-	string name; //°èÁÂÁÖ ÀÌ¸§
-	int pw; // °èÁÂ ºñ¹Ğ¹øÈ£
-	int money; // °èÁÂ ÀÜ¾×
+	string name; //ê³„ì¢Œì£¼ ì´ë¦„
+	int pw; // ê³„ì¢Œ ë¹„ë°€ë²ˆí˜¸
+	int money; // ê³„ì¢Œ ì”ì•¡
 public:
 	ATM();
-	ATM(int n, ATM* atm); // »ı¼ºÀÚ
-	void deposit(); // ÀÔ±İ
-	void withdraw(); // ÀÎÃâ
-	void send(string receiver, int receiveMon); // ÀÌÃ¼ - ¹ŞÀ½
-	void receive(int sendMon); // ÀÌÃ¼ - º¸³¿
-	int getMoney(); // ¾ó¸¶ÀÖ´ÂÁö Ãâ·Â
-	string getName(); // ÀÌ¸§ ºÒ·¯¿À±â
+	ATM(int n, ATM* atm); // ìƒì„±ì
+	void deposit(); // ì…ê¸ˆ
+	void withdraw(); // ì¸ì¶œ
+	void send(string receiver, int receiveMon); // ì´ì²´ - ë°›ìŒ
+	void receive(int sendMon); // ì´ì²´ - ë³´ëƒ„
+	int getMoney(); // ì–¼ë§ˆìˆëŠ”ì§€ ì¶œë ¥
+	string getName(); // ì´ë¦„ ë¶ˆëŸ¬ì˜¤ê¸°
 	void checking();
 };
 
@@ -28,30 +28,30 @@ string ATM::getName() {
 void ATM::deposit() {
 	int input;
 
-	cout << "ÀÔ±İÇÒ ±İ¾×À» ÀÔ·ÂÇØÁÖ¼¼¿ä >> ";
+	cout << "ì…ê¸ˆí•  ê¸ˆì•¡ì„ ì…ë ¥í•´ì£¼ì„¸ìš” >> ";
 	cin >> input;
 	money += input;
-	cout << endl << "ÇöÀç " << name << "´ÔÀÇ ÀÜ¾×Àº " << money << "¿ø ÀÔ´Ï´Ù." << endl;
+	cout << endl << "í˜„ì¬ " << name << "ë‹˜ì˜ ì”ì•¡ì€ " << money << "ì› ì…ë‹ˆë‹¤." << endl;
 }
 
 void ATM::withdraw() {
 	int input, pass;
 
-	cout << "¾ó¸¶¸¦ ÀÎÃâÇÏ½Ã°Ú½À´Ï±î? >> ";
+	cout << "ì–¼ë§ˆë¥¼ ì¸ì¶œí•˜ì‹œê² ìŠµë‹ˆê¹Œ? >> ";
 	cin >> input;
-	cout << "ºñ¹Ğ ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä >> ";
+	cout << "ë¹„ë°€ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš” >> ";
 	cin >> pass;
 
 	if (pass != pw) {
 		do
 		{
-			cout << "ºñ¹Ğ ¹øÈ£°¡ Æ²·È½À´Ï´Ù." << endl << "´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä >> ";
+			cout << "ë¹„ë°€ ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤." << endl << "ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì„¸ìš” >> ";
 			cin >> pass;
 		} while (pass != pw);
 	}
 
 	money -= input;
-	cout << endl << "ÇöÀç " << name << "´ÔÀÇ ÀÜ¾×Àº " << money << "¿ø ÀÔ´Ï´Ù." << endl;
+	cout << endl << "í˜„ì¬ " << name << "ë‹˜ì˜ ì”ì•¡ì€ " << money << "ì› ì…ë‹ˆë‹¤." << endl;
 }
 
 void ATM::send(string receiver, int receiveMon) {
@@ -71,19 +71,19 @@ ATM::ATM(int n, ATM* atm) {
 
 	for (int i = 0; i < n; i++)
 	{
-		cout << "\n¼º¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä >> ";
+		cout << "\nì„±ëª…ì„ ì…ë ¥í•˜ì„¸ìš” >> ";
 		cin >> atm[i].name;
 		atm[i];
 		do
 		{
-			cout << "ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä >> ";
+			cout << "ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” >> ";
 			cin >> atm[i].pw;
-			cout << "ÇÑ ¹ø ´õ ÀÔ·ÂÇØÁÖ¼¼¿ä >> ";
+			cout << "í•œ ë²ˆ ë” ì…ë ¥í•´ì£¼ì„¸ìš” >> ";
 			cin >> check;
 			if (atm[i].pw != check)
-				cout << "\nºñ¹Ğ¹øÈ£°¡ ¼­·Î ´Ù¸¨´Ï´Ù.\n";
+				cout << "\në¹„ë°€ë²ˆí˜¸ê°€ ì„œë¡œ ë‹¤ë¦…ë‹ˆë‹¤.\n";
 		} while (atm[i].pw != check);
-		cout << "ÀÔ±İÇÒ ±İ¾×À» ÀÔ·ÂÇØÁÖ¼¼¿ä >> ";
+		cout << "ì…ê¸ˆí•  ê¸ˆì•¡ì„ ì…ë ¥í•´ì£¼ì„¸ìš” >> ";
 		cin >> atm[i].money;
 	}
 };
@@ -95,10 +95,10 @@ void ATM::checking()
 
 	if (epw != pw)
 	{
-		while (epw != pw) // ÀÔ·ÂµÈ ºñ¹Ğ¹øÈ£°¡ pw¿Í ´Ù¸¦ ¶§ °è¼Ó ¹İº¹
+		while (epw != pw) // ì…ë ¥ëœ ë¹„ë°€ë²ˆí˜¸ê°€ pwì™€ ë‹¤ë¥¼ ë•Œ ê³„ì† ë°˜ë³µ
 		{
-			cout << "ºñ¹Ğ¹øÈ£°¡ Æ²·È½À´Ï´Ù." << endl;
-			cout << "ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä >> ";
+			cout << "ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤." << endl;
+			cout << "ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” >> ";
 			cin >> epw;
 		}
 	}
@@ -109,15 +109,16 @@ int main(void) {
 	int inputnum = 0, sendMon = 0;
 	string customer, receiver, epw;
 
-	cout << "ÀºÇà¿¡ °¡ÀÔÇÒ ÀÎ¿øÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä > ";
+	cout << "ì€í–‰ì— ê°€ì…í•  ì¸ì›ì„ ì…ë ¥í•´ì£¼ì„¸ìš” > ";
 	cin >> n;
 	ATM* atm = new ATM[n];
 	ATM(n, atm);
 
 	do
 	{
+		count = 0;
 		cout << endl << "--- SWING ATM ---" << endl;
-		cout << "¼ºÇÔÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä (Á¾·á¶ó¸é x¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä) >> ";
+		cout << "ì„±í•¨ì„ ì…ë ¥í•´ì£¼ì„¸ìš” (ì¢…ë£Œë¼ë©´ xë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”) >> ";
 		cin >> customer;
 
 		for (int i = 0; i < n; i++) {
@@ -128,7 +129,7 @@ int main(void) {
 		}
 
 		if (count >= n && customer!="x") {
-			cout << endl << "Á¸ÀçÇÏÁö ¾Ê´Â °èÁÂÁÖÀÔ´Ï´Ù." << endl;
+			cout << endl << "ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ê³„ì¢Œì£¼ì…ë‹ˆë‹¤." << endl;
 			continue;
 		}
 
@@ -136,8 +137,8 @@ int main(void) {
 			do
 			{
 				cout << endl << endl << "--- SWING ATM " << customer << " ---" << endl;
-				cout << "1. ÀÔ±İ" << endl << "2. ÀÎÃâ" << endl << "3. ÀÌÃ¼" << endl << "4. ÀÜ¾× È®ÀÎ" << endl << "5. Á¾·á" << endl;
-				cout << endl << "¹øÈ£¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä >> ";
+				cout << "1. ì…ê¸ˆ" << endl << "2. ì¸ì¶œ" << endl << "3. ì´ì²´" << endl << "4. ì”ì•¡ í™•ì¸" << endl << "5. ì¢…ë£Œ" << endl;
+				cout << endl << "ë²ˆí˜¸ë¥¼ ì„ íƒí•´ì£¼ì„¸ìš” >> ";
 				cin >> inputnum;
 
 				switch (inputnum)
@@ -150,7 +151,7 @@ int main(void) {
 					break;
 				case 3:
 					k = 0;
-					cout << "´©±¸¿¡°Ô º¸³»°Ú½À´Ï±î? >> ";
+					cout << "ëˆ„êµ¬ì—ê²Œ ë³´ë‚´ê² ìŠµë‹ˆê¹Œ? >> ";
 					cin >> receiver;
 					for (int i = 0; i < n; i++) {
 						if (receiver == atm[i].getName()) {
@@ -158,11 +159,11 @@ int main(void) {
 							break;
 						}
 					}
-					cout << "ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä >> ";
+					cout << "ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” >> ";
 					atm[count].checking();
 
 					if (k == 1) {
-						cout << "¾ó¸¶¸¦ º¸³»½Ã°Ú½À´Ï±î? >> ";
+						cout << "ì–¼ë§ˆë¥¼ ë³´ë‚´ì‹œê² ìŠµë‹ˆê¹Œ? >> ";
 						cin >> sendMon;
 						int receiveMon = sendMon;
 						atm[k].send(receiver, receiveMon);
@@ -170,7 +171,7 @@ int main(void) {
 					}
 					break;
 				case 4:
-					cout << atm[count].getName() << "´ÔÀÇ ÇöÀç ÀÜ¾×Àº " << atm[count].getMoney() << "¿ø ÀÔ´Ï´Ù.";
+					cout << atm[count].getName() << "ë‹˜ì˜ í˜„ì¬ ì”ì•¡ì€ " << atm[count].getMoney() << "ì› ì…ë‹ˆë‹¤.";
 					break;
 				}
 
