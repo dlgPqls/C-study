@@ -114,7 +114,7 @@ PhoneBookManager::PhoneBookManager(int num) {
 
 void PhoneBookManager::showAll() {
 	cout << endl << endl;
-	for (int i = 0; i < size-1; i++) {
+	for (int i = 0; i < size;i++) {
 		cout << i+1 << " . ";
 		cout << phoneB[i].getName() << " : " << phoneB[i].getPnum() << endl;
 	}
