@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 using namespace std;
 
 class PhoneBook {
@@ -114,7 +114,7 @@ PhoneBookManager::PhoneBookManager(int num) {
 
 void PhoneBookManager::showAll() {
 	cout << endl << endl;
-	for (int i = 0; i < size;i++) {
+	for (int i = 0; i < size; i++) {
 		cout << i+1 << " . ";
 		cout << phoneB[i].getName() << " : " << phoneB[i].getPnum() << endl;
 	}
@@ -122,6 +122,7 @@ void PhoneBookManager::showAll() {
 
 void PhoneBookManager::searchPnum() {
 	string findname;
+	int count = 0;
 	int find = 0;
 
 	cout << endl << endl;
@@ -130,11 +131,12 @@ void PhoneBookManager::searchPnum() {
 
 	for (int i = 0; i < size; i++) {
 		if (findname==phoneB[i].getName()) {
-			find++;
+			count++;
+			find = i;
 			break;
 		}
 	}
-	if (find == 0) {
+	if (count == 0) {
 		cout << "연락처가 존재하지 않습니다.";
 	}
 	else {
