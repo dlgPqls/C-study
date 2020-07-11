@@ -147,7 +147,6 @@ void PhoneBookManager::searchPnum() {
 void PhoneBookManager::addPnum() {
 	string name, pnum;
 
-	size++;
 	cout << endl;
 	cout << "이름을 입력해주세요 >> ";
 	cin >> name;
@@ -156,7 +155,7 @@ void PhoneBookManager::addPnum() {
 
 	PhoneBook* pb = new PhoneBook[size ];
 
-	for (int i = 0; i < size -1; i++) {
+	for (int i = 0; i < size; i++) {
 		pb[i] = phoneB[i];
 	}
 
@@ -169,7 +168,7 @@ void PhoneBookManager::addPnum() {
 		phoneB[i] = pb[i];
 	}
 
-	phoneB[size - 2].addPhone(name, pnum);
+	phoneB[size-1].addPhone(name, pnum);
 }
 
 void PhoneBookManager::editPnum() {
